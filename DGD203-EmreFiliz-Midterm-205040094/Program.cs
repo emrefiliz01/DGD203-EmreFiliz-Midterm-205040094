@@ -11,6 +11,7 @@ namespace SpaceQuest
             AskPlayerName();
             GreetPlayer();
             AskFirstQuestion();
+            AskSecondQuestion();
             WaitForNextStep();
         }
 
@@ -48,6 +49,32 @@ namespace SpaceQuest
                     break;
                 default:
                     Console.WriteLine("That's not a valid choice. The asteroid field is getting closer!");
+                    break;
+            }
+        }
+        private void AskSecondQuestion()
+        {
+            Console.WriteLine($"\nAs you continue your journey, {playerName}, you encounter an unidentified alien ship. What do you do?");
+            Console.WriteLine("1. Approach the ship cautiously and try to communicate.");
+            Console.WriteLine("2. Prepare for a defensive stance and wait for the ship to make a move.");
+            Console.WriteLine("3. Avoid the ship and continue on your current path.");
+            Console.Write("Enter the number of your choice: ");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine($"{playerName}, you approach the alien ship and establish communication. They offer valuable information about a nearby planet.");
+                    break;
+                case "2":
+                    Console.WriteLine($"{playerName}, you prepare for a potential conflict, but the alien ship simply observes you from a distance.");
+                    break;
+                case "3":
+                    Console.WriteLine($"{playerName}, you avoid the ship and continue your journey, but you can’t help but wonder what could have been.");
+                    break;
+                default:
+                    Console.WriteLine("That's not a valid choice. The alien ship is still there, waiting.");
                     break;
             }
         }
